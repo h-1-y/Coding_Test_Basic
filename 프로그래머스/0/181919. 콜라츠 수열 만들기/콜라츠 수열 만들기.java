@@ -4,7 +4,6 @@ class Solution {
     public int[] solution(int n) {
         
         List<Integer> arr = new ArrayList<>();
-		
 		arr.add(n);
 		
 		while(n!=1) {
@@ -16,10 +15,6 @@ class Solution {
 			
 		}
         
-        int [] answer = new int[arr.size()];
-        
-        for ( int i=0; i<arr.size(); i++ ) answer[i] = arr.get(i);
-        
-        return answer;
+        return arr.stream().mapToInt(i -> i).toArray();
     }
 }
