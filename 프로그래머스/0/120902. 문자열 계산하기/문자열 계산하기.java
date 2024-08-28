@@ -6,14 +6,9 @@ class Solution {
         int answer = 0;
 		boolean plusMinus = true;
 		
-		for ( int i=0; i<arr.length; i++ ) {
-			
-			if ( i%2 == 0 ) {
-				if ( plusMinus ) answer += Integer.parseInt(arr[i]);
-				else answer -= Integer.parseInt(arr[i]);
-			} else plusMinus = arr[i].equals("+") ? true : false;
-			
-		}
+		for ( int i=0; i<arr.length; i++ ) 
+			if ( i%2 == 0 ) answer = plusMinus ? answer + Integer.parseInt(arr[i]) : answer - Integer.parseInt(arr[i]);
+			else plusMinus = arr[i].equals("+") ? true : false;
         
         return answer;
     }
