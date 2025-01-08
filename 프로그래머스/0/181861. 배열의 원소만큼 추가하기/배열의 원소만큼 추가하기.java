@@ -11,7 +11,7 @@ class Solution {
 		
 		for ( int i=0; i<arr.length; i++ ) 
 			for ( int j=0; j<arr[i]; j++ ) answer[cnt++] = arr[i];
-		
+        
 		return answer;
         
     }
