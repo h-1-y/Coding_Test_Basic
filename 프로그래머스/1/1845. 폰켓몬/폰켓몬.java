@@ -11,7 +11,7 @@ class Solution {
 			else map.put(i, map.get(i)+1);
 		}
         
-        return map.keySet().size() >= get ? get : map.keySet().size();
+        return map.size() >= get ? get : map.size();
         
     }
 }
