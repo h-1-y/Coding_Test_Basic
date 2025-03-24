@@ -11,7 +11,7 @@ class Solution {
 			else map.put(i, 1);
 		}
 		
-		Map<Integer, Double> map2 = new HashMap<>();
+		Map<Integer, Double> map2 = new HashMap<>(); 
 		Double[] arr = new Double[N];
 		
 		for ( int i=1; i<=N; i++ ) {
