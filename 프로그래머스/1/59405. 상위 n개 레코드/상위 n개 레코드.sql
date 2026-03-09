@@ -1,0 +1,20 @@
+SELECT
+    NAME
+FROM
+    (
+SELECT
+      ROWNUM AS RN
+    , A.*
+FROM
+    (
+SELECT 
+      NAME
+    , DATETIME
+FROM
+    ANIMAL_INS
+ORDER BY
+    DATETIME
+    ) A
+)
+WHERE
+    RN = 1
