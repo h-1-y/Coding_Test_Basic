@@ -1,0 +1,27 @@
+SELECT
+      NAME
+    , DATETIME
+FROM
+    (
+SELECT
+      ROWNUM AS RN
+    , A.*
+FROM
+    (
+SELECT
+      A.NAME
+    , A.DATETIME
+FROM
+    ANIMAL_INS A
+LEFT OUTER JOIN
+    ANIMAL_OUTS B
+ON
+    A.ANIMAL_ID = B.ANIMAL_ID
+WHERE
+    B.ANIMAL_ID IS NULL
+ORDER BY
+    DATETIME
+    ) A
+    )
+WHERE
+    RN <= 3
