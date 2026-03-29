@@ -1,0 +1,25 @@
+SELECT
+      PRODUCT_ID
+    , PRODUCT_NAME
+    , SUM(TOTAL) AS TOTAL_SALES
+FROM
+    (
+        SELECT
+              A.PRODUCT_ID
+            , B.PRODUCT_NAME
+            , A.AMOUNT * B.PRICE AS TOTAL
+        FROM
+            FOOD_ORDER A
+        LEFT OUTER JOIN
+            FOOD_PRODUCT B
+        ON
+            A.PRODUCT_ID = B.PRODUCT_ID
+        WHERE
+            B.PRODUCT_ID IS NOT NULL
+        AND
+            TO_CHAR(PRODUCE_DATE, 'YYYYMM') = '202205'
+    )
+GROUP BY
+    PRODUCT_ID, PRODUCT_NAME
+ORDER BY
+    TOTAL_SALES DESC, PRODUCT_ID
